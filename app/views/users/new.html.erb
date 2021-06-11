@@ -20,9 +20,9 @@
 
 <%= form_with scope: :user, url: users_path do |form| %>
   <%= form.label(:username, "Username:") %><br>
-  <%= form.text_field :username %><br>
+  <%= form.text_field :username,  placeholder: "JrFondem" %><br>
   <%= form.label(:email, "Email:") %><br>
-  <%= form.email_field :email %><br>
+  <%= form.email_field :email , placeholder: "example@example.com"%><br>
   <%= form.label(:password, "Password:") %><br>
   <%= form.password_field :password %><br>
   <%= form.submit %><br>
