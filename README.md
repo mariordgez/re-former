@@ -35,6 +35,8 @@ Follow the steps below to get a local copy running:
 - Type `bundle install` in the root directory of the project.
 - Type `rails server` in the root directory of the project.
 - Type `rails db:migrate` in the root directory of the project.
+- To check create new user go to http://localhost:3000/users/new
+- To edit a user go to http://localhost:3000/users/{id of user you want to edit}/edit
 
 ## Authors
 
