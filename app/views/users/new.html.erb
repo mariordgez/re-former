@@ -22,3 +22,13 @@
 <% end -%>
 <% 
 =end %>
+
+<%= form_with scope: :user do |form| %>
+  <%= form.text_field :username, placeholder:"Name" %><br>
+  <%= form.text_field :email %><br>
+
+  <%= password_field_tag(:password, "Password:") %>
+
+  <%= form.submit %>
+<% end %>
+
