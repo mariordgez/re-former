@@ -8,10 +8,7 @@
   <input type="password" id="password" name="user[password]"><br><br>
   <input type="submit" value="Submit">
 </form>-->
-
-<% 
-=begin %>
-<%= form_tag('/users') do -%>
+<!--<%= form_tag('/users') do -%>
   <div><%= label_tag 'username', 'Username: ' %></div>
   <div><%= text_field_tag 'user[username]' %></div>
   <div><%= label_tag 'email', 'Email: ' %></div>
@@ -19,16 +16,14 @@
   <div><%= label_tag 'password', 'Password: ' %></div>
   <div><%= password_field_tag 'user[password]' %></div>
   <div><%= submit_tag 'Submit' %></div>
-<% end -%>
-<% 
-=end %>
+<% end -%> -->
 
-<%= form_with scope: :user do |form| %>
-  <%= form.text_field :username, placeholder:"Name" %><br>
-  <%= form.text_field :email %><br>
-
-  <%= password_field_tag(:password, "Password:") %>
-
-  <%= form.submit %>
+<%= form_with scope: :user, url: users_path do |form| %>
+  <%= form.label(:username, "Username:") %><br>
+  <%= form.text_field :username,  placeholder: "JrFondem" %><br>
+  <%= form.label(:email, "Email:") %><br>
+  <%= form.email_field :email , placeholder: "example@example.com"%><br>
+  <%= form.label(:password, "Password:") %><br>
+  <%= form.password_field :password %><br>
+  <%= form.submit %><br>
 <% end %>
-
