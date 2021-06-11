@@ -13,7 +13,6 @@ AllCops:
     - "config/initializers/*"
     - "config/environments/*"
     - "db/**/*"
-    - "gemfile"
 
   DisplayCopNames: true
 
