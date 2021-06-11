@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(users_params)
-      redirect_to @user
+      redirect_to edit_user_url
     else
       render :edit
     end
