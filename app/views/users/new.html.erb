@@ -18,12 +18,27 @@
   <div><%= submit_tag 'Submit' %></div>
 <% end -%> -->
 
-<%= form_with scope: :user, url: users_path do |form| %>
-  <%= form.label(:username, "Username:") %><br>
-  <%= form.text_field :username,  placeholder: "JrFondem" %><br>
-  <%= form.label(:email, "Email:") %><br>
-  <%= form.email_field :email , placeholder: "example@example.com"%><br>
-  <%= form.label(:password, "Password:") %><br>
-  <%= form.password_field :password %><br>
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label(:username, "Username:") %><br>
+    <%= form.text_field :username,  placeholder: "JrFondem" %><br>
+    <% @user.errors.full_messages_for(:username).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label(:email, "Email:") %><br>
+    <%= form.email_field :email , placeholder: "example@example.com"%><br>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label(:password, "Password:") %><br>
+    <%= form.password_field :password %><br>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
   <%= form.submit %><br>
 <% end %>
