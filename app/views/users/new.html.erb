@@ -8,12 +8,12 @@
   <input type="password" id="password" name="user[password]"><br><br>
   <input type="submit" value="Submit">
 </form>-->
-<%= form_tag('/posts') do -%>
-  <div><%= label_tag 'username', 'Username: ' %>
-  <%= text_field_tag 'user[username]' %></div>
-  <div><%= label_tag 'email', 'Email: ' %>
-  <%= email_field_tag 'user[email]' %></div>
-  <div><%= label_tag 'password', 'Password: ' %>
-  <%= password_field_tag 'user[password]' %></div>
+<%= form_tag('/users') do -%>
+  <div><%= label_tag 'username', 'Username: ' %></div>
+  <div><%= text_field_tag 'user[username]' %></div>
+  <div><%= label_tag 'email', 'Email: ' %></div>
+  <div><%= email_field_tag 'user[email]' %></div>
+  <div><%= label_tag 'password', 'Password: ' %></div>
+  <div><%= password_field_tag 'user[password]' %></div>
   <div><%= submit_tag 'Submit' %></div>
 <% end -%>
